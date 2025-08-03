@@ -40,6 +40,7 @@ let users = [
     bio: "Mobile app dev with a love for Flutter & fast UIs."
   }
 ];
+//  display the card 
 function displayUsers(arr) {
 arr.forEach(el => {
     let userCard = document.createElement("div");
@@ -69,12 +70,12 @@ arr.forEach(el => {
 
 displayUsers(users);
 
-
+// search the user in card
 let inp=document.querySelector("input");
 inp.addEventListener("input",function () {
      const searchValue = inp.value.toLowerCase();
     let searchItem=users.filter((el) => {
-        return el.name.toLowerCase().startsWith(inp.value);
+        return el.name.toLowerCase().startsWith(searchValue);
         
     })
    if (searchItem.length === 0) {
